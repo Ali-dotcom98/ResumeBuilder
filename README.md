@@ -32,25 +32,21 @@
 
 <hr>
 
-<h2>📦 Installation</h2>
-<pre>
-<code>
+## 📦 Installation
+
+```bash
 # Clone the repository
-git clone https://github.com/your-username/ResumeForge.git
+git clone https://github.com/Ali-dotcom98/ResumeBuilder.git
 
-# Navigate into the project directory
-cd ResumeForge
+# Navigate into the project folder
+cd ResumeBuilder
 
-# Install all dependencies
+# Install dependencies
 npm install
 
-# Set up environment variables (create a .env file based on .env.example)
-touch .env
-
 # Start the development server
-npm run start
-</code>
-</pre>
+npm run dev
+
 
 <hr>
 
