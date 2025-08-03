@@ -1,12 +1,13 @@
 import React from 'react'
 import { BrowserRouter as Router , Routes , Route } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
-import LandingPages from './Pages/ResumeUpdate/LandingPages'
 import Login from './Pages/Auth/Login'
 import SignUp from './Pages/Auth/SignUp'
 import Dashboard from './Pages/Home/Dashboard'
 import EditResume from './Pages/ResumeUpdate/EditResume'
 import UserProvider from './Components/context/userContext'
+import BoxWidthTracker from './BoxWidthTracker'
+import LandingPages from './Pages/Home/LandingPages'
 
 const App = () => {
   return (

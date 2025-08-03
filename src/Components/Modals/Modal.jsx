@@ -10,6 +10,7 @@ const Modal = ({
   actionBtnIcon = null,
   actionBtnText,
   onActionClick,
+  type
 }) => {
   if (!isOpen) return null;
   console.log(title);
@@ -17,7 +18,7 @@ const Modal = ({
 
   return (
     <div className="fixed inset-0 z-50 flex justify-center items-center w-full h-full bg-black/40">
-      <div className={`relative bg-white flex flex-col   shadow-lg rounded-lg overflow-hidden ${title == "Banner" ? "w-[39vw] h-[50vh]": "w-[95vw] h-[95vh]"} `}>
+      <div className={`relative bg-white flex flex-col   shadow-lg rounded-lg overflow-hidden ${type == "Banner" ? "w-[39vw] h-[50vh]": "w-[95vw] h-[95vh]"} `}>
 
         {/* Header */}
         {!hideHeader && (

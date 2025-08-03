@@ -8,14 +8,14 @@ LuUser,
 } from "react-icons/lu";
 import { RiLinkedinLine } from "react-icons/ri";
 import React, { useRef, useEffect, useState } from "react";
-import ContactInfo from "./ContactInfo";
-import EducationInfo from "./EducationInfo";
-import { formatYearMonth } from "../../Utils/helper";
-import LanguageSection from "./LanguageSection";
-import WorkExperience from "./WorkExperience";
-import ProjectInfo from "./ProjectInfo";
-import SkillSection from "./SkillSection";
-import CertificationInfo from "./CertificationInfo";
+import ContactInfo from "../../../Components/ResumeTemplates/ContactInfo";
+import EducationInfo from "../../../Components/ResumeTemplates/EducationInfo";
+import { formatYearMonth } from "../../../Utils/helper";
+import LanguageSection from "../../../Components/ResumeTemplates/LanguageSection";
+import WorkExperience from "../../../Components/ResumeTemplates/WorkExperience";
+import ProjectInfo from "../../../Components/ResumeTemplates/ProjectInfo";
+import SkillSection from "../../../Components/ResumeTemplates/SkillSection";
+import CertificationInfo from "../../../Components/ResumeTemplates/CertificationInfo";
 
 
 const Title = ({ text, color }) => {
@@ -29,17 +29,41 @@ const Title = ({ text, color }) => {
         </div>
     );
 };
-const DEFAULT_THEME = ["#EBFDFF", "#A1F4FD", "#CEFAFE", "#00B8DB", "#4A5565"];
+
+ const themes = [
+    ["#EBFDFF", "#A1F4FD", "#CEFAFE", "#00B8DB", "#4A5565"],
+    ["#EBFDFF", "#A1F4FD", "#CEFAFE", "#00B8DB", "#4A5565"],   
+    ["#E9FBF8", "#B4EFE7", "#93E2DA", "#2AC9A0", "#3D4C5A"],
+    ["#F5F4FF", "#E0DBFF", "#C9C2F8", "#8579D1", "#4B4B5C"],
+    ["#F0FAFF", "#D6F0FF", "#AFDEFF", "#3399FF", "#445361"],
+    ["#FFF5F7", "#FFE0EC", "#FAC6D4", "#F6729C", "#5A5A5A"],
+    ["#F9FAFB", "#E4E7EB", "#CBD5E0", "#7F9CF5", "#2D3748"],
+    ["#F4FFFD", "#D3FDF2", "#B0E9D4", "#34C79D", "#384C48"],
+    ["#FFF7F0", "#FFE6D9", "#FFD2BA", "#FF9561", "#4C4743"],
+    ["#F9FCFF", "#E3F0F9", "#C0DDEE", "#6CA6CF", "#46545E"],
+    ["#FFFDF6", "#FFF4D7", "#FFE7A0", "#FFD000", "#57534E"],
+    ["#EFFCFF", "#C8F0FF", "#99E0FF", "#007BA7", "#2B3A42"],
+    ["#F7F767", "#E4E4E4", "#CFCFCF", "#4A4A4A", "#222222"],
+    ["#E3F2FD", "#90CAF9", "#A8D2F4", "#1E88E5", "#0D47A1"],
+]
+
+    
 
 
 const TemplateOne = ({ resumeData, colorPalette, containerWidth }) => {
-    const themeColors = colorPalette?.length > 0 ? colorPalette : DEFAULT_THEME;
-    console.log("resumeData", resumeData);
-    
-    
     const resumeRef = useRef(null);
     const [baseWidth, setBaseWidth] = useState(800); // Default value
     const [scale, setScale] = useState(1);
+    const [toggleColor, settoggleColor] = useState(0)
+    const themeColors = colorPalette?.length > 0 ? colorPalette : themes[toggleColor];
+    console.log("resumeData", resumeData);
+    
+    useEffect(()=>{
+        const interval = setInterval(()=>{
+            settoggleColor((prev)=>(prev+1 )% themes.length)
+        },2000);
+        return ()=> clearInterval(interval);
+    },[])
 
     useEffect(() => {
         if (resumeRef.current) {
@@ -49,15 +73,19 @@ const TemplateOne = ({ resumeData, colorPalette, containerWidth }) => {
         }
     }, [containerWidth]);
 
+   
+
+
     return (
-    <div
+    <div  style={{ width: containerWidth, overflow: 'hidden' }}>
+        <div
         ref={resumeRef}
         className="p-3 bg-white"
         style={{
-        transform: containerWidth > 0 ? `scale(${scale})` : "none",
+        transform: `scale(${scale})`,
         transformOrigin: "top left",
-        width: containerWidth > 0 ? `${baseWidth}px` : "auto", // Keep the original width when not scaled
-        height: "auto",
+        width: `${baseWidth}px`, // Keep the original width when not scaled
+      
         }}>
 
         <div className="grid grid-cols-12 gap-8">
@@ -225,6 +253,7 @@ const TemplateOne = ({ resumeData, colorPalette, containerWidth }) => {
 
             </div>
         </div>
+    </div>
     </div>
 
     );

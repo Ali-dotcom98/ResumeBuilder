@@ -23,7 +23,7 @@ const ProjectsDetailFrom = ({
                 placeholder="Portfolio Website"
                 type="text"
                 value={project.title || ""}
-                onChange={({ target }) =>
+                onchange={({ target }) =>
                     updateArrayItem(index, "title", target.value)
                 }
                 />
@@ -37,7 +37,7 @@ const ProjectsDetailFrom = ({
                 className="w-full form-input mt-1"
                 rows={3}
                 value={project.description || ""}
-                onChange={({ target }) =>
+                onchange={({ target }) =>
                     updateArrayItem(index, "description", target.value)
                 }
                 />
@@ -49,7 +49,7 @@ const ProjectsDetailFrom = ({
                 placeholder="https://github.com/username/project"
                 type="url"
                 value={project.github || ""}
-                onChange={({ target }) =>
+                onchange={({ target }) =>
                     updateArrayItem(index, "github", target.value)
                 }
                 />
@@ -61,7 +61,7 @@ const ProjectsDetailFrom = ({
                 placeholder="https://yourproject.live"
                 type="url"
                 value={project.liveDemo || ""}
-                onChange={({ target }) =>
+                onchange={({ target }) =>
                     updateArrayItem(index, "liveDemo", target.value)
                 }
                 />

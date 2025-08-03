@@ -56,9 +56,10 @@ const Dashboard = () => {
    
    <Modal
     isOpen={openCreateModal}
-    title={"Banner"}
+    title={"Add Resume"}
     onClose={() => setOpenCreateModal(false)}
     hideHeader
+    type= "Banner"
   >
     <div>
       <CreateResumeForm />

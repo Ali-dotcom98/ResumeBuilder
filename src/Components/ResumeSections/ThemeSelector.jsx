@@ -18,6 +18,8 @@ const ThemeSelector = ({
   onClose,
 }) => {
   const resumeRef = useRef(null);
+
+  
   const [baseWidth, setBaseWidth] = useState(800);
   const [tabValue, setTabValue] = useState("Templates");
 

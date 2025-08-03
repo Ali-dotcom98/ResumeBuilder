@@ -42,6 +42,7 @@ const EditResume = () => {
   const [progress, setProgress] = useState(0);
   const [errorMsg, setErrorMsg] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [DeleteModel, setDeleteModel] = useState(false)
 
   const [resumeData, setResumeData] = useState({
     title: "",
@@ -182,7 +183,7 @@ const EditResume = () => {
           <ProjectsDetailFrom
             projectInfo={resumeData?.projects}
             updateArrayItem={(index, key, value) =>
-              updateArrayItem("projects", index, key, value)
+              updateArraySection("projects", index, key, value)
             }
             addArrayItem={(newItem) => addArrayItem("projects", newItem)}
             removeArrayItem={(index) => removeArrayItem("projects", index)}
@@ -319,7 +320,7 @@ const EditResume = () => {
     "certifications",
     "additionalInfo",
   ];
-  console.log(currentPage);
+
   
   const currentIndex = pages.indexOf(currentPage)
   if(currentIndex ==0)
@@ -342,9 +343,7 @@ const EditResume = () => {
   }
 
   const validateAndNext = (e) => {
-  const errors = [];
-  console.log(errors);
-  
+  const errors = []; 
 
   switch (currentPage) {
     case "profile-info":
@@ -371,9 +370,9 @@ const EditResume = () => {
       break;
 
     case "education-info":
-      resumeData.education.forEach(({ degree, institution, startDate, endDate }, index) => {
+      resumeData.education.forEach(({ degree, institue, startDate, endDate }, index) => {
         if (!degree.trim()) errors.push(`Degree is required in education ${index + 1}`);
-        if (!institution) errors.push(`Institution is required in education ${index + 1}`);
+        if (!institue) errors.push(`Institution is required in education ${index + 1}`);
         if (!startDate || !endDate)
           errors.push(`Start and End dates are required in education ${index + 1}`);
       });
@@ -438,7 +437,8 @@ const uploadResumeImages = async () => {
         fixTailwindColors(resumeRef.current);
 
         const imageDataUrl = await captureElementAsImage(resumeRef.current);
-        console.log("imageDataUrl",imageDataUrl);
+      
+        
         
 
         // Convert base64 to File
@@ -446,11 +446,10 @@ const uploadResumeImages = async () => {
             imageDataUrl,
             `resume-${resumeId}.png`
         );
-        console.log("thumbnailFile",thumbnailFile);
         
 
         const profileImageFile = resumeData?.profileInfo?.profileImg || null;
-        console.log("profileImageFile", profileImageFile);
+        
         
 
         const formData = new FormData();
@@ -468,10 +467,7 @@ const uploadResumeImages = async () => {
         );
 
         const { thumbnailLink, profilePreviewUrl } = uploadResponse.data;
-        console.log("thumbnailFile , ",thumbnailFile);
-        console.log("profilePreviewUrl coming " , profilePreviewUrl );
-
-        console.log("RESUME_DATA_", resumeData);
+        
 
         // Call the second API to update other resume data
         await updateResumeDetails(thumbnailLink, profilePreviewUrl);
@@ -501,9 +497,10 @@ const updateResumeDetails = async (thumbnailLink, profilePreviewUrl) => {
                     ...resumeData.profileInfo,
                     profilePreviewUrl: profilePreviewUrl || "",
                 },
+
             }
         );
-        console.log("Resume updated:", response.data);
+       
     } catch (err) {
         console.error("Error capturing image:", err);
     } finally {
@@ -512,9 +509,21 @@ const updateResumeDetails = async (thumbnailLink, profilePreviewUrl) => {
 };
 
 
-  const handleDeleteResume = ()=>{
-
+const handleDeleteResume = async () => {
+  try {
+    const result = await axiosInstance.delete(API_PATHS.RESUME.DELETE(resumeId));
+    
+    if (result?.data) {
+      toast.success(result.data.message || "Resume deleted successfully.");
+      navigate("/dashboard");
+    }
+  } catch (error) {
+    const errorMessage =
+      error.response?.data?.message || "Failed to delete resume. Try again.";
+    toast.error(errorMessage);
+    console.error("Delete error:", error);
   }
+};
 
 
   const fetchResumeDetailsById =async()=>{
@@ -585,7 +594,7 @@ const updateResumeDetails = async (thumbnailLink, profilePreviewUrl) => {
 
           <button
             className="btn-small-light"
-            onClick={handleDeleteResume}
+            onClick={()=> setDeleteModel(true)}
           >
             <LuTrash2 className="text-[16px]" />
             <span className="hidden md:block">Delete</span>
@@ -704,7 +713,36 @@ const updateResumeDetails = async (thumbnailLink, profilePreviewUrl) => {
           colorPalette={resumeData?.template?.colorPalette || []}
         />
   </div>
+    </Modal>
+    <Modal
+      isOpen={DeleteModel}
+      onClose={() => setDeleteModel(false)}
+      title="Delete Resume"
+      type = "Banner"
+    >
+      <div className="text-black px-4 py-2">
+        <p className="text-lg mb-4">
+          Are you sure you want to delete the resume titled <span className="font-semibold text-red-600">"{resumeData.title}"</span>?
+        </p>
+
+        <div className="flex items-center  justify-center mt-10 gap-4">
+          <button
+            onClick={() => setDeleteModel(false)}
+            className="px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-100 transition"
+          >
+            Cancel
+          </button>
+          <button
+            onClick={handleDeleteResume}
+            className="px-4 py-2 rounded-md bg-red-600 text-white hover:bg-red-700 transition"
+          >
+            Confirm Delete
+          </button>
+        </div>
+      </div>
 </Modal>
+
+    
 
 
   </DashboardLayout>

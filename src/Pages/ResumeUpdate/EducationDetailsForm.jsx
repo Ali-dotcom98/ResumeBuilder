@@ -25,7 +25,7 @@ return (
                     label="Institution"
                     placeholder="XYZ University"
                     type="text"
-                    value={education.institution || ""}
+                    value={education.institue || ""}
                     onchange={({ target }) =>
                         updateArrayItem(index, "institution", target.value)
                     }

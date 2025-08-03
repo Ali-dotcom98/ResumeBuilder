@@ -1,7 +1,4 @@
-import TemplateOne from "./TemplateOne";
-import TemplateThree from "./TemplateThree";
-import TemplateTwo from "./TemplateTwo";
-
+import TemplateOne from './TemplateOne'
 const RenderResume = ({ templateId, resumeData, colorPalette, containerWidth }) => {
   console.log("colorPalette", colorPalette);
   
@@ -9,22 +6,6 @@ const RenderResume = ({ templateId, resumeData, colorPalette, containerWidth }) 
     case "01":
       return (
         <TemplateOne
-          resumeData={resumeData}
-          colorPalette={colorPalette}
-          containerWidth={containerWidth}
-        />
-      );
-     case "02":
-      return (
-        <TemplateTwo
-          resumeData={resumeData}
-          colorPalette={colorPalette}
-          containerWidth={containerWidth}
-        />
-      );
-     case "03":
-      return (
-        <TemplateThree
           resumeData={resumeData}
           colorPalette={colorPalette}
           containerWidth={containerWidth}
