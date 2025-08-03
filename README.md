@@ -46,7 +46,8 @@ npm install
 
 # Start the development server
 npm run dev
+```
+![Untitled (1) (1)](<img width="1440" height="720" alt="image" src="https://github.com/user-attachments/assets/03db06de-37cb-4b9a-9d2b-7c155855e626" />
+)
 
-
-<hr>
 
