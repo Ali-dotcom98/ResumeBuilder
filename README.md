@@ -1,5 +1,5 @@
 <h1>📌 ResumeBuilder</h1>
-<p><strong>ResumeForge</strong> is a dynamic, full-stack resume builder application that empowers users to craft professional resumes with ease. Designed with an elegant interface and robust backend, it provides real-time editing, multiple templates, and secure user authentication — all built using Node.js, Express, and MongoDB.</p>
+<p><strong>ResumeBuilder</strong> is a dynamic, full-stack resume builder application that empowers users to craft professional resumes with ease. Designed with an elegant interface and robust backend, it provides real-time editing, multiple templates, and secure user authentication — all built using Node.js, Express, and MongoDB.</p>
 
 <hr>
 
