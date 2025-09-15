@@ -59,7 +59,7 @@ const TemplateThree = ({ resumeData, colorPalette, containerWidth }) => {
         width: containerWidth > 0 ? `${baseWidth}px` : "auto", // Keep the original width when not scaled
         height: "auto",
         }}>
-        <div className="flex items-center px-2 space-x-5 w-full">
+        <div className="flex items-center px-2 justify-between mb-3 w-full ">
             <div className="w-[100px] h-[100px] max-w-[110px] max-h-[110px] rounded-lg flex items-center  justify-center" style={{ backgroundColor: themeColors[1] }}>
                 {resumeData.profileInfo.profilePreviewUrl ? (
                 <img
@@ -73,7 +73,7 @@ const TemplateThree = ({ resumeData, colorPalette, containerWidth }) => {
                 </div>
                 )}
             </div>
-            <div className="flex flex-col gap-4 items-start">
+            <div className="flex flex-col gap-1 items-start -translate-x-40 ">
                 <h2 className=" text-2xl font-bold mt-3 ">{resumeData.profileInfo.fullName || "NO"}</h2>
                 <p className="text-sm font-semibold text-center ">{resumeData.profileInfo.designation}</p>
                 <ContactInfo
@@ -82,7 +82,7 @@ const TemplateThree = ({ resumeData, colorPalette, containerWidth }) => {
                     value={resumeData.contactInfo.location}
                     />
             </div>
-            <div className="flex  flex-col gap-4 items-center justify-end border">
+            <div className="flex  flex-col gap-4 items-center justify-end  mr-10">
                 <ContactInfo
                     icon={<LuMail />}
                     iconBG={themeColors[2]}

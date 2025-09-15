@@ -57,7 +57,7 @@ const ThemeSelector = ({
   }, []);
 
   return (
-    <div className="container mx-auto px-2 md:px-0">
+    <div className="continer mx-auto  px-2 md:px-0">
       <div className="flex items-center justify-between mb-5 mt-2">
         <Tabs tabs={TAB_DATA} activeTab={tabValue} setActiveTab={setTabValue} />
         <button
