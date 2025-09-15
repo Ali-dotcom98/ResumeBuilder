@@ -56,47 +56,50 @@ const SignUp = () => {
   };
 
   return (
-    <div>
-      <h3>Create an Account</h3>
-      <p>Join us</p>
-      <form onSubmit={handleSubmit}>
-        <div>
-          {error && <p className='text-red-500 text-xs pb-2.5'>{error}</p>}
-        </div>
-        
-        <PhotoSelector image={profilePic} setimage={setprofilePic} />
+    <div className='font-urbanist w-full border  h-screen  flex flex-col justify-center items-center'>
+      <div className='border w-[90vh] p-7'>
+        <h3>Create an Account</h3>
+        <p>Join us</p>
+        <form onSubmit={handleSubmit}>
+          <div>
+            {error && <p className='text-red-500 text-xs pb-2.5'>{error}</p>}
+          </div>
+          
+          <PhotoSelector image={profilePic} setimage={setprofilePic} />
 
-        <Input 
-          value={fullname}
-          onchange={({ target }) => setfullname(target.value)}
-          label="Full Name"
-          placeholder="John Doe"
-          type="text"
-        />
-        <Input 
-          value={email}
-          onchange={({ target }) => setemail(target.value)}
-          label="Email Address"
-          placeholder="john@gmail.com"
-          type="email"
-        />
-        <Input 
-          value={Password}
-          onchange={({ target }) => setPassword(target.value)}
-          label="Password"
-          placeholder="********"
-          type="password"
-        />
+          <Input 
+            value={fullname}
+            onchange={({ target }) => setfullname(target.value)}
+            label="Full Name"
+            placeholder="John Doe"
+            type="text"
+          />
+          <Input 
+            value={email}
+            onchange={({ target }) => setemail(target.value)}
+            label="Email Address"
+            placeholder="john@gmail.com"
+            type="email"
+          />
+          <Input 
+            value={Password}
+            onchange={({ target }) => setPassword(target.value)}
+            label="Password"
+            placeholder="********"
+            type="password"
+          />
 
-        <button type='submit' className='btn-primary'>Sign up</button>
-        <p className='text-[13px] text-slate-800 mt-3'>
-          Already have an account?{" "}
-          <button className='font-medium text-primary underline cursor-pointer' onClick={handleNavigation}>
-            Login 
-          </button>
-        </p>
-      </form>
+          <button type='submit' className='btn-primary'>Sign up</button>
+          <p className='text-[13px] text-slate-800 mt-3'>
+            Already have an account?{" "}
+            <button className='font-medium text-primary underline cursor-pointer' onClick={handleNavigation}>
+              Login 
+            </button>
+          </p>
+        </form>
+      </div>
     </div>
+    
   );
 };
 
