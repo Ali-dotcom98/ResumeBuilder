@@ -683,7 +683,7 @@ const handleDeleteResume = async () => {
       onClose={() => setOpenThemeSelector(false)}
       title="Change Theme"
     >
-      <div className="w-[90vw] h-[80vh] border">
+      <div className="w-[90vw] h-[80vh] pl-5">
         <ThemeSelector
           selectedMeme={resumeData?.template}
           setSelectedTheme={(value) => {

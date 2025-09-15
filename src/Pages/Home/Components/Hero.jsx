@@ -24,7 +24,7 @@ const Hero = () => {
               
               <p className="text-xl text-gray-600 leading-relaxed">
                 Create beautiful, ATS-friendly resumes with ease.
-Stand out and land your dream job faster with ResumeForge.
+                    Stand out and land your dream job faster with ResumeForge.
               </p>
             </div>
 
@@ -60,7 +60,7 @@ Stand out and land your dream job faster with ResumeForge.
           </div>
 
           <div className="relative ">
-            <div className="absolute  inset-0  bg-gradient-to-r from-purple-500/85 to-purple-300 rounded-2xl blur-3xl opacity-20 animate-spin"></div>
+            <div className="absolute  inset-0  bg-gradient-to-r from-purple-500/85 to-purple-300 rounded-2xl blur-3xl opacity-20 animate-pulse"></div>
                 <div className=' h-[100vh] rounded-md translate-x-16 translate-y-10 rotate-3  hover:rotate-6 transform ease-in duration-200'>
                     <RenderResume
                         templateId={"01"}
