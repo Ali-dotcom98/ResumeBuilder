@@ -39,6 +39,10 @@ const Login = () => {
             email,
             password
         })
+        if(!response.data)
+        {
+            return navigate("/Login")
+        }
         const {user , token} = response.data
         updateUser(user, token);
         navigate("/Dashboard")
@@ -58,39 +62,42 @@ const Login = () => {
     
   }
   return (
-    <div className='w-[90vw] border md:[33vw ] p-7 flex flex-col justify-center'>
-        <h3 className='text-lg font-semibold text-black'>Welcome Back</h3>
-        <p className='text-xs text-slate-700 mt-[5px] mb-6'>Please Enter your detail to log in</p>
-        <form onSubmit={handleForm}>
-            <div>
-              {error && <p className='text-red-500 text-xs pb-2.5'>{error}</p>}
-            </div>
-           
-            <Input 
-                value = {email}
-                onchange ={({target})=> setemail(target.value)}
-                label = "Email Address"
-                placeholder = "John@gmail.com"
-                type= "text"
-            />
-             <Input 
-                value = {password}
-                onchange ={({target})=> setpassword(target.value)}
-                label = "Password "
-                placeholder = "lklkll"
-                type= "password"
-            />
-            <button type='submit' className='btn-primary'>Login</button>
-            <p className='text-[13px] text-slate-800 mt-3'>
-                Dont have an Account? {""}
-                <button className='font-medium text-primary underline cursor-pointer' onClick={()=>handleNavigation("SignUp")}>
-                    Signup
-                </button>
-            </p>
+    <div className='font-urbanist w-full border  h-screen  flex flex-col justify-center items-center'>
+        <div className='border w-[90vh] p-7'>
+            <h3 className='text-lg font-semibold text-black'>Welcome Back</h3>
+            <p className='text-xs text-slate-700 mt-[5px] mb-6'>Please Enter your detail to log in</p>
+            <form onSubmit={handleForm}>
+                <div>
+                {error && <p className='text-red-500 text-xs pb-2.5'>{error}</p>}
+                </div>
+            
+                <Input 
+                    value = {email}
+                    onchange ={({target})=> setemail(target.value)}
+                    label = "Email Address"
+                    placeholder = "John@gmail.com"
+                    type= "text"
+                />
+                <Input 
+                    value = {password}
+                    onchange ={({target})=> setpassword(target.value)}
+                    label = "Password "
+                    placeholder = "lklkll"
+                    type= "password"
+                />
+                <button type='submit' className='btn-primary'>Login</button>
+                <p className='text-[13px] text-slate-800 mt-3'>
+                    Dont have an Account? {""}
+                    <button className='font-medium text-primary underline cursor-pointer' onClick={()=>handleNavigation("SignUp")}>
+                        Signup
+                    </button>
+                </p>
 
-        </form>
-      
+            </form>
+        
+        </div>
     </div>
+   
   )
 }
 
