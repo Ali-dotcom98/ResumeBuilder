@@ -48,5 +48,6 @@ npm install
 npm run dev
 ```
 ![Untitled (1) (1)](https://github.com/Ali-dotcom98/ResumeBuilder/blob/main/Website%20Mockup%20(Community)%20(2).png?raw=true)
+[screen-capture.webm](https://github.com/user-attachments/assets/2617ba0c-b6b8-4e22-9a7b-e272bf3d5844)
 
 
