@@ -49,4 +49,13 @@ npm run dev
 ```
 ![Untitled (1) (1)](https://github.com/Ali-dotcom98/ResumeBuilder/blob/main/Website%20Mockup%20(Community)%20(2).png?raw=true)
 
+[Watch Demo Video](https://github.com/user-attachments/assets/7e1852ff-72dc-4b95-874a-fb386c13fd03)
+
+
+
+
+
+
+
+
 
