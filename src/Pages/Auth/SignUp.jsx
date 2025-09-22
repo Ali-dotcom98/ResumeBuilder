@@ -65,7 +65,7 @@ const SignUp = () => {
             {error && <p className='text-red-500 text-xs pb-2.5'>{error}</p>}
           </div>
           
-          <PhotoSelector image={profilePic} setimage={setprofilePic} />
+          <PhotoSelector image={profilePic} setimage={setprofilePic} Flag={"Singup"}/>
 
           <Input 
             value={fullname}
