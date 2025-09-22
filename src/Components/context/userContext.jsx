@@ -10,8 +10,10 @@ const UserProvider = ({ children }) => {
     const [User, setUser] = useState(null)
     const [loading, setLoading] = useState(true);
 
+
     useEffect(() => {
         const fetchUserData = async () => {
+            
             try {
                 
                 const result = await axiosInstance.get(API_PATHS.AUTH.GET_PROFILE);
