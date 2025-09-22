@@ -8,11 +8,11 @@ const Input = ({value, onchange , label, placeholder, type}) => {
         setshowPassword(!showPassword);
     }
   return (
-    <div className='flex flex-col my-2 space-y-1.5'>
+    <div className='flex flex-col my-2 space-y-1.5 relative'>
         <label htmlFor="">{label}</label>
         <input type={ type =="password" ? (showPassword ? "text" : "password") : type}
             placeholder={placeholder}
-            className=' w-full p-3 border bg-slate-50 relative outline-none rounded-md'
+            className=' w-full p-3 border bg-slate-50  outline-none rounded-md'
             value={value}
             onChange={(e)=>onchange(e)}
         />
@@ -21,13 +21,13 @@ const Input = ({value, onchange , label, placeholder, type}) => {
                 <>
                     {
                         showPassword ? (
-                            <div className="border border-black"  onClick={ToggleShowPassword}>
-                                <FaRegEye size={22} className='border'/>
+                            <div className='absolute right-0 top-1/2 -translate-x-4'  onClick={ToggleShowPassword}>
+                                <FaRegEye size={22} className=''/>
                             </div>
                         )
                         :
                         (
-                            <FaRegEyeSlash size={22} className='' onClick={ToggleShowPassword} />
+                            <FaRegEyeSlash size={22} className='absolute right-0 top-1/2 -translate-x-4' onClick={ToggleShowPassword} />
                         )
 
                     }
