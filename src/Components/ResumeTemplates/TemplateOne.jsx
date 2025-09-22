@@ -69,6 +69,7 @@ const TemplateOne = ({ resumeData, colorPalette, containerWidth }) => {
                             src={resumeData.profileInfo.profilePreviewUrl}
                             className="w-[90px] h-[90px] rounded-full"
                             alt="Profile Preview"
+                            crossOrigin="anonymous"
                         />
                         ) : (
                         <div className="w-[90px] h-[90px] flex items-center justify-center text-5xl rounded-full" style={{ color: themeColors[4] }}>

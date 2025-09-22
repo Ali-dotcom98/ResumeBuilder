@@ -1,5 +1,4 @@
 const ContactInfo = ({ icon, iconBG, value }) => {
-    console.log("value",value);
         
     return (
     <div className="flex items-center gap-2">

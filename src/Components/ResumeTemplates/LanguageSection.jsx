@@ -17,7 +17,7 @@ const LanguageInfo = ({ language, progress, accentColor, bgColor }) => {
 };
 
 const LanguageSection = ({ languages, accentColor, bgColor }) => {
-    console.log("languages",languages);
+   
     
     return (
     <div className="flex flex-col gap-2">
