@@ -1,26 +1,43 @@
 import React, { useRef, useState } from 'react'
 import { User, Trash, Upload } from "lucide-react"
 
-const PhotoSelector = ({ image, setImage, preview, setPreview }) => {
+const PhotoSelector = ({ image,setimage , Flag,  setImage, preview, setPreview  }) => {
+   
+    
     const inputRef = useRef(null);
-    const [previewUrl, setPreviewUrl] = useState(preview);
+    const [previewUrl, setPreviewUrl] = useState(preview || "");
+     console.log("previewUrl",previewUrl);
 
     const handleImageChange = (e) => {
         const file = e.target.files[0];
 
         if (file) {
-            setImage(file);
+            if(!Flag)
+            {
+                setImage(file);
+            }
+            else
+            {
+                setimage(file);
+            }
             const preview = URL.createObjectURL(file);
             console.log("preview", preview);
             setPreviewUrl(preview);
-            setPreview(preview);
+            if(!Flag) 
+                setPreview(preview);
         }
     };
 
     const handleImageRemove = () => {
-        setImage(null);
-        setPreviewUrl(null);
-        setPreview(null);
+        if(!Flag)
+        {
+            setImage(null);
+            setPreviewUrl(null);
+            setPreview(null);
+        }
+        
+        setimage(null)
+       
     };
 
     const onChooseFile = () => {
