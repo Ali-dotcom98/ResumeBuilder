@@ -4,6 +4,7 @@ import {
   LuArrowLeft,
   LuCircleAlert,
   LuDownload,
+  LuHouse,
   LuPalette,
   LuSave,
   LuTrash2,
@@ -16,7 +17,7 @@ import axiosInstance from "../../Utils/axiosinstance";
 import { API_PATHS } from "../../Utils/ApiPath";
 import StepProgress from "../Auth/components/StepProgress";
 import ProfileInfoForm from "./ProfileInfoForm";
-import { Section, Volleyball } from "lucide-react";
+import { LucideHome, Section, Volleyball } from "lucide-react";
 import ContactInfoForm from "./ContactInfoForm";
 import WorkExperience from "./WorkExperience";
 import EducationDetailsForm from "./EducationDetailsForm";
@@ -438,10 +439,6 @@ const uploadResumeImages = async () => {
 
         const imageDataUrl = await captureElementAsImage(resumeRef.current);
       
-        
-        
-
-        // Convert base64 to File
         const thumbnailFile = dataURLtoFile(
             imageDataUrl,
             `resume-${resumeId}.png`
@@ -455,7 +452,6 @@ const uploadResumeImages = async () => {
         const formData = new FormData();
         if (profileImageFile) formData.append("profileImage", profileImageFile);
         if (thumbnailFile) formData.append("thumbnail", thumbnailFile);
-
         const uploadResponse = await axiosInstance.put(
             API_PATHS.RESUME.UPLOAD_IMAGES(resumeId),
             formData,
@@ -468,8 +464,6 @@ const uploadResumeImages = async () => {
 
         const { thumbnailLink, profilePreviewUrl } = uploadResponse.data;
         
-
-        // Call the second API to update other resume data
         await updateResumeDetails(thumbnailLink, profilePreviewUrl);
 
         toast.success("Resume Updated Successfully!");
@@ -536,6 +530,7 @@ const handleDeleteResume = async () => {
         ...prevState,
         title: resumeInfo?.title || "Untitled",
         template: resumeInfo?.template || prevState?.template,
+        thumbnailLink : resumeInfo?.thumbnailLink || prevState?.th  ,
         profileInfo: resumeInfo?.profileInfo || prevState?.profileInfo,
         contactInfo: resumeInfo?.contactInfo || prevState?.contactInfo,
         workExperience: resumeInfo?.workExperience || prevState?.workExperience,
@@ -559,6 +554,11 @@ const handleDeleteResume = async () => {
     setBaseWidth(resumeRef.current.offsetWidth);
   }
 };
+
+  const goHome = ()=>{  
+    navigate("/dashboard")
+  }
+
   useEffect(() => {
   updateBaseWidth();
   window.addEventListener("resize", updateBaseWidth);
@@ -574,15 +574,25 @@ const handleDeleteResume = async () => {
     <DashboardLayout>
     <div className="container mx-auto">
       <div className="flex items-center justify-between gap-5 bg-white rounded-lg border border-purple-100py-3 px-4 mb-4 py-3 ">
-        <TitleInput
-          title={resumeData.title}
-          setTitle={(value) =>
-            setResumeData((prevState) => ({
-              ...prevState,
-              title: value,
-            }))
-          }
+        
+        <div className="flex items-center gap-3">
+          <button
+              className="btn-small-light"
+              onClick={goHome}
+            >
+              <LuHouse className="text-[16px]" />
+              <span className="hidden md:block">Home</span>
+            </button>
+          <TitleInput
+            title={resumeData.title}
+            setTitle={(value) =>
+              setResumeData((prevState) => ({
+                ...prevState,
+                title: value,
+              }))
+            }
         />
+        </div>
         <div className="flex items-center gap-4">
           <button
             className="btn-small-light"
@@ -692,7 +702,7 @@ const handleDeleteResume = async () => {
               template: value || prevState.template,
             }));
           }}
-          resumeData={null} // ← Double check this, why are you passing null?
+          resumeData={null}
           onClose={() => setOpenThemeSelector(false)}
         />
       </div>
@@ -706,7 +716,7 @@ const handleDeleteResume = async () => {
       actionBtnIcon={<LuDownload className="text-[16px]" />}
       onActionClick={() => reactToPrintFn()}
     >
-      <div ref={resumeDownloadRef} className="w-[98vw] h-[90vh]">
+      <div ref={resumeRef} className="w-[98vw] h-[90vh]">
         <RenderResume
           templateId={resumeData?.template?.theme || ""}
           resumeData={resumeData}
