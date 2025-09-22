@@ -9,7 +9,7 @@ const Hero = () => {
     <section className="font-urbanist pt-20 pb-16 bg-gradient-to-br from-blue-50 via-white to-emerald-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8 -translate-y-16">
+          <div className="space-y-10 -translate-y-16">
             <div className="space-y-4">
               <div className="flex items-center space-x-2 text-gray-900 py-0.5 ">
                 <Star className="h-4 w-4 fill-current" />
@@ -39,24 +39,7 @@ const Hero = () => {
               </button>
             </div>
 
-            <div className="flex items-center  space-x-8 text-sm text-gray-500">
-              <div className="flex items-center space-x-2">
-                <Users className="h-4 w-4" />
-                <span>500,000+ users</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Download className="h-4 w-4" />
-                <span>2M+ downloads</span>
-              </div>
-              <div className="flex items-center space-x-1">
-                <div className="flex space-x-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                <span>4.9/5 rating</span>
-              </div>
-            </div>
+          
           </div>
 
           <div className="relative ">
@@ -73,7 +56,7 @@ const Hero = () => {
           
         </div>
       </div>
-    </section>
+    </section>  
   );
 };
 

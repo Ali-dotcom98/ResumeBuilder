@@ -56,7 +56,7 @@ const TemplateOne = ({ resumeData, colorPalette, containerWidth }) => {
     const [scale, setScale] = useState(1);
     const [toggleColor, settoggleColor] = useState(0)
     const themeColors = colorPalette?.length > 0 ? colorPalette : themes[toggleColor];
-    console.log("resumeData", resumeData);
+    
     
     useEffect(()=>{
         const interval = setInterval(()=>{

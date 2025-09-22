@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X, FileText } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { LuFile } from 'react-icons/lu';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,7 +32,6 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex text-[21px] items-center space-x-2 text-gray-900">
-            <FileText className="  animate-bounce" />
             <span className="font-extrabold tracking-wider">
               ResumeForge
             </span>
@@ -42,7 +42,7 @@ const Header = () => {
             {
                  NavBar.map((item)=>{
                     return <button onClick={ item.name == "Login" ? ()=>handleNavigation("Login"):""} 
-                    className='capitalize text-[15px] font-semibold text-gray-900 hover:text-purple-600 cursor-pointer transition-colors duration-200 px-2 py-0.5 focus:outline-none  focus:ring-2 focus:ring-purple-600 '>{item.name}</button>
+                    className='capitalize text-[15px] font-semibold text-gray-900 hover:text-purple-600 cursor-pointer transition-colors duration-200 px-2 py-0.5 focus:outline-none   '>{item.name}</button>
                  })
             }
            
@@ -65,7 +65,7 @@ const Header = () => {
               <a href="#features" className="block px-3 py-2 text-gray-600 hover:text-blue-600">Features</a>
               <a href="#templates" className="block px-3 py-2 text-gray-600 hover:text-blue-600">Templates</a>
               <a href="#pricing" className="block px-3 py-2 text-gray-600 hover:text-blue-600">Pricing</a>
-              <button className="block px-3 py-2 text-gray-600 hover:text-blue-600">Login</button>
+              <button className="block px-3 py-2 text-gray-600  ">Login</button>
               <button onClick={()=>handleNavigation("SignUp")} className="w-full mt-2 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium">
                 Get Started
               </button>
