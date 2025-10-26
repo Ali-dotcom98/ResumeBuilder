@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, FileText } from 'lucide-react';
+import { Menu, X, FileText, Package2, PartyPopper } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { LuFile } from 'react-icons/lu';
 
@@ -28,10 +28,13 @@ const Header = () => {
   ]
 
   return (
-    <header className="font-urbanist fixed top-0 w-full   backdrop-blur-sm z-50">
+    <header className="font-urbanist fixed top-0 w-full mt-3  backdrop-blur-sm z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex text-[21px] items-center space-x-2 text-gray-900">
+          <div className="flex text-[21px] items-center space-x-2 text-gray-900 gap-1.5">
+           
+          <PartyPopper/>
+
             <span className="font-extrabold tracking-wider">
               ResumeForge
             </span>
