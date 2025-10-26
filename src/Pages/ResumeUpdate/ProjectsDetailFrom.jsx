@@ -70,7 +70,7 @@ const ProjectsDetailFrom = ({
             {projectInfo.length > 1 && (
                 <button
                 type="button"
-                className="absolute top-3 flex items-center right-3 text-sm text-red-500 hover:underline cursor-pointer"
+                className="absolute top-3 flex items-center justify-center gap-1  right-3 text-sm text-red-500 hover:underline cursor-pointer"
                 onClick={() => removeArrayItem(index)}
                 >
                 <LuTrash2 /> Remove Project
