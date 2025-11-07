@@ -47,7 +47,7 @@ npm install
 # Start the development server
 npm run dev
 ```
-![Untitled (1) (1)](https://github.com/Ali-dotcom98/ResumeBuilder/blob/main/Website%20Mockup%20(Community)%20(2).png?raw=true)
+![Untitled (1) (1)](https://github.com/Ali-dotcom98/ResumeBuilder/blob/main/ResumeBuilder2.png?raw=true)
 
 https://github.com/user-attachments/assets/3cf0083d-d096-4ad0-8b7d-30ba29422c05
 
