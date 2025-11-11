@@ -20,12 +20,12 @@
 
 <h2>🛠️ Tech Stack</h2>
 <ul>
+  <li><strong>Frontend</strong>: React.js </li>
   <li><strong>Backend</strong>: Node.js, Express.js</li>
   <li><strong>Database</strong>: MongoDB</li>
   <li><strong>Authentication</strong>: JSON Web Tokens (JWT)</li>
-  <li><strong>Templating</strong>: EJS (Embedded JavaScript)</li>
   <li><strong>Styling</strong>: Tailwind CSS</li>
-  <li><strong>PDF Generation</strong>: HTML to PDF library (e.g., Puppeteer or html-pdf)</li>
+  <li><strong>PDF Generation</strong>: HTML to PDF library (html-pdf)</li>
   <li><strong>Image Handling</strong>: Multer (for image uploads)</li>
   <li><strong>Session Handling</strong>: Cookie-parser, Express-session</li>
 </ul>
