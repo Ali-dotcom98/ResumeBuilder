@@ -5,15 +5,15 @@
 
 <h2>🚀 Features</h2>
 <ul>
-  <li>✅ <strong>User Authentication</strong> – Secure sign-up and login system with JWT-based session management</li>
-  <li>📄 <strong>Resume Dashboard</strong> – Centralized view of all your created resumes with edit and delete functionality</li>
-  <li>✍️ <strong>Live Resume Editor</strong> – See real-time changes while editing your resume content</li>
-  <li>🎨 <strong>Template Switching</strong> – Instantly switch between different resume layouts to suit your style</li>
-  <li>🌈 <strong>Color Palette Selector</strong> – Personalize your resume with custom color themes</li>
-  <li>📥 <strong>PDF Download Support</strong> – Export beautifully formatted resumes as downloadable PDFs</li>
-  <li>💾 <strong>Save & Edit Resumes</strong> – Store multiple resumes and update them anytime</li>
-  <li>🖼️ <strong>Image Upload & Preview</strong> – Add your profile picture and preview it in real-time</li>
-  <li>🔗 <strong>Backend API Integration</strong> – Full CRUD operations powered by Express.js & MongoDB</li>
+  <li><strong>User Authentication</strong> – Secure sign-up and login system with JWT-based session management</li>
+  <li><strong>Resume Dashboard</strong> – Centralized view of all your created resumes with edit and delete functionality</li>
+  <li><strong>Live Resume Editor</strong> – See real-time changes while editing your resume content</li>
+  <li><strong>Template Switching</strong> – Instantly switch between different resume layouts to suit your style</li>
+  <li><strong>Color Palette Selector</strong> – Personalize your resume with custom color themes</li>
+  <li><strong>PDF Download Support</strong> – Export beautifully formatted resumes as downloadable PDFs</li>
+  <li><strong>Save & Edit Resumes</strong> – Store multiple resumes and update them anytime</li>
+  <li><strong>Image Upload & Preview</strong> – Add your profile picture and preview it in real-time</li>
+  <li><strong>Backend API Integration</strong> – Full CRUD operations powered by Express.js & MongoDB</li>
 </ul>
 
 <hr>
