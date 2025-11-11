@@ -1,9 +1,9 @@
-<h1>📌 ResumeBuilder</h1>
+##  💼  ResumeBuilder
 <p><strong>ResumeBuilder</strong> is a dynamic, full-stack resume builder application that empowers users to craft professional resumes with ease. Designed with an elegant interface and robust backend, it provides real-time editing, multiple templates, and secure user authentication — all built using Node.js, Express, and MongoDB.</p>
 
 <hr>
 
-<h2>🚀 Features</h2>
+<h2>🌟 Features</h2>
 <ul>
   <li><strong>User Authentication</strong> – Secure sign-up and login system with JWT-based session management</li>
   <li><strong>Resume Dashboard</strong> – Centralized view of all your created resumes with edit and delete functionality</li>
