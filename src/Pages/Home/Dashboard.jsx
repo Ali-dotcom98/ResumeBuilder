@@ -61,7 +61,7 @@ const Dashboard = () => {
     hideHeader
     type= "Banner"
   >
-    <div>
+    <div className="">
       <CreateResumeForm />
     </div>
   </Modal>
