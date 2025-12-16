@@ -371,9 +371,9 @@ const EditResume = () => {
       break;
 
     case "education-info":
-      resumeData.education.forEach(({ degree, institue, startDate, endDate }, index) => {
+      resumeData.education.forEach(({ degree, institution, startDate, endDate }, index) => {
         if (!degree.trim()) errors.push(`Degree is required in education ${index + 1}`);
-        if (!institue) errors.push(`Institution is required in education ${index + 1}`);
+        if (!institution) errors.push(`Institution is required in education ${index + 1}`);
         if (!startDate || !endDate)
           errors.push(`Start and End dates are required in education ${index + 1}`);
       });
@@ -526,6 +526,8 @@ const handleDeleteResume = async () => {
       if(response.data && response.data.profileInfo)
       {
         const resumeInfo = response.data;
+        console.log("resumeInfo",resumeInfo);
+        
         setResumeData((prevState) => ({
         ...prevState,
         title: resumeInfo?.title || "Untitled",
