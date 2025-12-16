@@ -37,7 +37,7 @@ const ProjectsDetailFrom = ({
                 className="w-full form-input mt-1"
                 rows={3}
                 value={project.description || ""}
-                onchange={({ target }) =>
+                onChange={({ target }) =>
                     updateArrayItem(index, "description", target.value)
                 }
                 />
