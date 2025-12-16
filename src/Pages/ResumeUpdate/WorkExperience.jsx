@@ -4,6 +4,8 @@ import { LuPlus, LuTrash2 } from "react-icons/lu";
 import Input from "../../Components/Inputs/Input";
 
 const WorkExperienceForm = ({ workExperience, updateArrayItem, addArrayItem, removeArrayItem }) => {
+  console.log("workExperience",workExperience);
+  
 return (
     <div className="px-5 pt-5">
         <h2 className="text-lg font-semibold text-gray-900">Work Experience</h2>
