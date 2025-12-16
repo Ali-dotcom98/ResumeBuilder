@@ -8,7 +8,7 @@ const SkillsInfoForm = ({skillsInfo,updateArrayItem,addArrayItem,removeArrayItem
     <div className="px-5 pt-5">
         <h2 className="text-lg font-semibold text-gray-900">Skills</h2>
         <div className="mt-4 flex flex-col gap-4 mb-3">
-            {skillsInfo.map((skill, index) => (
+            {skillsInfo?.map((skill, index) => (
                 <div key={index} className="border border-gray-200/80 p-4 rounded-lg relative">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <Input
