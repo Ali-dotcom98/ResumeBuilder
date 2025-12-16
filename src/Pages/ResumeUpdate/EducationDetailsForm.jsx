@@ -3,6 +3,8 @@ import React from 'react'
 import { LuPlus, LuTrash2 } from "react-icons/lu"
 import Input from '../../Components/Inputs/Input';
 const EducationDetailsForm = ({educationInfo,updateArrayItem,addArrayItem,removeArrayItem}) => {
+    console.log("educationInfo",educationInfo);
+    
 return (
     <div className="px-5 pt-5">
         <h2 className="text-lg font-semibold text-gray-900">Education</h2>
@@ -25,7 +27,7 @@ return (
                     label="Institution"
                     placeholder="XYZ University"
                     type="text"
-                    value={education.institue || ""}
+                    value={education.institution || ""}
                     onchange={({ target }) =>
                         updateArrayItem(index, "institution", target.value)
                     }
